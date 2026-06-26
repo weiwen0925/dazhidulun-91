@@ -137,41 +137,6 @@ cursor:pointer;display:none;z-index:115;box-shadow:0 4px 14px rgba(0,0,0,.25);}
  border-radius:10px;background:var(--sbBg);color:var(--goldL);border:none;font-size:20px;cursor:pointer;}
  .hero-title{font-size:38px;} .ch-name{font-size:28px;} .toc-grid{grid-template-columns:1fr;}
 }
-
-/* wy-cross-nav-css v1 */
-/* ── 跨卷導覽（側欄底部）── */
-.sb-cross{display:flex;flex-direction:column;align-items:center;gap:8px;
-  width:100%;margin:18px 0 4px;padding:18px 4px 6px;position:relative;}
-.sb-cross::before{content:"";position:absolute;top:0;left:14%;right:14%;
-  height:1px;background:linear-gradient(90deg,
-    transparent 0%,rgba(184,134,11,.15) 18%,
-    var(--gold,#b8860b) 50%,
-    rgba(184,134,11,.15) 82%,transparent 100%);
-  box-shadow:0 1px 0 rgba(212,168,75,.18);}
-.sb-cross::after{content:"";position:absolute;top:6px;left:38%;right:38%;
-  height:1px;background:linear-gradient(90deg,
-    transparent,rgba(184,134,11,.55),transparent);}
-.sb-x{display:flex;flex-direction:column;align-items:center;gap:3px;
-  text-decoration:none;color:var(--sbText,#d4c4a8);padding:4px 4px;width:100%;
-  border-radius:7px;transition:all .25s;}
-.sb-x:hover{background:rgba(184,134,11,.14);transform:translateY(-1px);}
-.sb-x-glyph{width:30px;height:30px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  border:1.2px solid rgba(212,196,168,.55);
-  color:var(--goldL,#d4a84b);font-family:"Noto Sans TC",sans-serif;font-size:14px;
-  background:rgba(184,134,11,.08);transition:all .25s;}
-.sb-x:hover .sb-x-glyph{border-color:var(--gold,#b8860b);color:#fff;
-  background:linear-gradient(135deg,var(--gold,#b8860b),var(--goldL,#d4a84b));
-  box-shadow:0 0 10px rgba(184,134,11,.5);}
-.sb-x-label{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;
-  letter-spacing:1.2px;color:var(--sbText,#d4c4a8);opacity:.78;text-align:center;
-  line-height:1.25;}
-.sb-x:hover .sb-x-label{color:var(--goldL,#d4a84b);opacity:1;}
-.sb-x-hub .sb-x-glyph{background:linear-gradient(135deg,
-  rgba(184,134,11,.22),rgba(212,168,75,.18));
-  border-color:rgba(212,168,75,.55);color:var(--goldL,#d4a84b);font-size:13px;
-  font-weight:700;letter-spacing:1px;}
-
 </style>
 <style id="wy-copy-outer">
 #wyToast{position:fixed;left:50%;top:24px;transform:translateX(-50%) translateY(-14px);
@@ -203,7 +168,38 @@ cursor:pointer;display:none;z-index:115;box-shadow:0 4px 14px rgba(0,0,0,.25);}
 <style id="wy-l3-print">
 @media print{html{background:#fff!important;}body{display:none!important;}
 iframe,iframe.ch-frame{display:none!important;}@page{size:auto;margin:0;}}
-</style><style id="wy-preguard">html:not(.wy-revealed){visibility:hidden!important;background:#fff!important;}html:not(.wy-revealed) body{visibility:hidden!important;background:#fff!important;}</style></head>
+</style><style id="wy-preguard">html:not(.wy-revealed){visibility:hidden!important;background:#fff!important;}html:not(.wy-revealed) body{visibility:hidden!important;background:#fff!important;}</style><meta name="wy-video" content="v1">
+<style id="wy-video-css">
+.toc-card{position:relative;padding-bottom:48px!important;}
+.toc-video{position:absolute;right:16px;bottom:14px;display:inline-flex;align-items:center;gap:6px;
+  font-family:'Noto Sans TC',sans-serif;font-size:13px;letter-spacing:1px;
+  background:linear-gradient(135deg,#b8860b,#d4a84b);color:#fff;padding:5px 14px;border-radius:20px;
+  text-decoration:none;box-shadow:0 2px 8px rgba(184,134,11,.32);transition:transform .18s,box-shadow .18s,filter .18s;}
+.toc-video:hover{transform:translateY(-1px);box-shadow:0 5px 15px rgba(184,134,11,.5);filter:brightness(1.07);}
+.toc-video .pl{font-size:10px;}
+.toc-overview{display:inline-flex;align-items:center;gap:8px;margin:2px auto 26px;
+  font-family:'Noto Sans TC',sans-serif;font-size:15px;letter-spacing:1.5px;
+  background:linear-gradient(135deg,#1e1a14,#3d3225);color:#d4a84b;
+  border:1px solid rgba(184,134,11,.6);padding:10px 22px;border-radius:26px;text-decoration:none;
+  box-shadow:0 3px 12px rgba(0,0,0,.22);transition:all .2s;}
+.toc-overview:hover{background:linear-gradient(135deg,#b8860b,#d4a84b);color:#fff;border-color:#b8860b;
+  box-shadow:0 6px 18px rgba(184,134,11,.5);}
+.toc-overview .pl{font-size:12px;}
+.wy-ov-wrap{text-align:center;}
+#wyVideo{position:fixed;right:20px;bottom:78px;z-index:118;display:none;align-items:center;gap:8px;
+  font-family:'Noto Sans TC',sans-serif;font-size:14px;letter-spacing:1.5px;
+  background:linear-gradient(135deg,#1e1a14,#3d3225);color:#d4a84b;
+  border:1px solid rgba(184,134,11,.6);border-radius:26px;padding:10px 18px;text-decoration:none;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);transition:background .22s,color .22s,border-color .22s,box-shadow .22s;
+  max-width:62vw;}
+#wyVideo.show{display:inline-flex;}
+#wyVideo:hover{background:linear-gradient(135deg,#b8860b,#d4a84b);color:#fff;border-color:#b8860b;
+  box-shadow:0 6px 20px rgba(184,134,11,.55);}
+#wyVideo .wv-ic{font-size:13px;}
+#wyVideo .wv-tx{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media print{#wyVideo,.toc-video,.toc-overview{display:none!important;}}
+@media(max-width:600px){#wyVideo{bottom:74px;}#wyVideo .wv-tx{max-width:40vw;}}
+</style></head>
 <body oncontextmenu="return false" oncopy="return false" oncut="return false" ondragstart="return false" onselectstart="return false"><script id="wy-index-guard">
 (function(){'use strict';
   var ALLOWED_HOST='weiwen0925.github.io',ALLOWED_PATH='/dazhidulun-91/';
@@ -255,22 +251,7 @@ iframe,iframe.ch-frame{display:none!important;}@page{size:auto;margin:0;}}
 <a class="sb-brand" href="#top" id="sbBrand" title="回到頂部">
 <span class="sb-brand-line1">大智度論</span><span class="sb-brand-line2">卷九十一</span>
 <span class="sb-brand-arrow">↑ 首頁</span></a>
-<nav class="sb-nav"><a class="sb-item" data-ch="0" onclick="goCh(0)"><span class="sb-circle">〇</span><span class="sb-label">釋照明品</span></a><a class="sb-item" data-ch="1" onclick="goCh(1)"><span class="sb-circle">一</span><span class="sb-label">般若方便</span></a><a class="sb-item" data-ch="2" onclick="goCh(2)"><span class="sb-circle">二</span><span class="sb-label">大心無住</span></a><a class="sb-item" data-ch="3" onclick="goCh(3)"><span class="sb-circle">三</span><span class="sb-label">幻喻度生</span></a><a class="sb-item" data-ch="4" onclick="goCh(4)"><span class="sb-circle">四</span><span class="sb-label">空性離瞋</span></a><a class="sb-item" data-ch="5" onclick="goCh(5)"><span class="sb-circle">五</span><span class="sb-label">檀度助道</span></a></nav>  <!-- wy-cross-nav v1 -->
-  <div class="sb-cross">
-    <a class="sb-x" href="https://weiwen0925.github.io/dazhidulun-90/" title="第九十卷">
-      <span class="sb-x-glyph">←</span>
-      <span class="sb-x-label">卷九十</span>
-    </a>
-    <a class="sb-x sb-x-hub" href="https://weiwen0925.github.io/dazhidulun-0/" title="大智度論門頁">
-      <span class="sb-x-glyph">智</span>
-      <span class="sb-x-label">門頁</span>
-    </a>
-    <a class="sb-x" href="https://weiwen0925.github.io/dazhidulun-92/" title="第九十二卷">
-      <span class="sb-x-glyph">→</span>
-      <span class="sb-x-label">卷九十二</span>
-    </a>
-  </div>
-</aside>
+<nav class="sb-nav"><a class="sb-item" data-ch="0" onclick="goCh(0)"><span class="sb-circle">〇</span><span class="sb-label">釋照明品</span></a><a class="sb-item" data-ch="1" onclick="goCh(1)"><span class="sb-circle">一</span><span class="sb-label">般若方便</span></a><a class="sb-item" data-ch="2" onclick="goCh(2)"><span class="sb-circle">二</span><span class="sb-label">大心無住</span></a><a class="sb-item" data-ch="3" onclick="goCh(3)"><span class="sb-circle">三</span><span class="sb-label">幻喻度生</span></a><a class="sb-item" data-ch="4" onclick="goCh(4)"><span class="sb-circle">四</span><span class="sb-label">空性離瞋</span></a><a class="sb-item" data-ch="5" onclick="goCh(5)"><span class="sb-circle">五</span><span class="sb-label">檀度助道</span></a></nav></aside>
 <main class="main">
 <div class="site-hero"><div class="hero-title">釋 照 明 品 第 八 十 一</div>
 <div class="hero-sub">大智度論 · 卷九十一 · 龍樹菩薩造 · 鳩摩羅什譯</div><div class="hero-divider"></div>
@@ -5505,4 +5486,50 @@ if(k==='F12')blk(e);if(e.ctrlKey&&e.shiftKey&&(k==='I'||k==='J'||k==='C'||k==='K
   else{document.addEventListener('DOMContentLoaded',initHash);}
 })();
 </script>
-</body></html>
+<a id="wyVideo" href="https://youtu.be/9CIsaqlnsTI" target="_blank" rel="noopener" title="本品 YouTube 影音解說"><span class="wv-ic">▶</span><span class="wv-tx" id="wyVideoTx">本品影音</span></a><script id="wy-video-js">
+(function(){
+  var VIDS=["9CIsaqlnsTI", "rFLaAQc_5zg", "N9xT6IoBOWo", "dC9fmysUBFc", "HGh9eO3jS68", "2j63l5KRBTM"],NAMES=["釋照明品", "般若方便", "大心無住", "幻喻度生", "空性離瞋", "檀度助道"],OV='9CIsaqlnsTI';
+  function build(){
+    /* 總目錄卡片膠囊 */
+    document.querySelectorAll('.toc-card[data-ch]').forEach(function(c){
+      if(c.querySelector('.toc-video'))return;
+      var n=parseInt(c.getAttribute('data-ch'),10);if(isNaN(n)||!VIDS[n])return;
+      var a=document.createElement('a');a.className='toc-video';
+      a.href='https://youtu.be/'+VIDS[n];a.target='_blank';a.rel='noopener';
+      a.title='YouTube 影音解說';a.innerHTML='<span class="pl">▶</span> 影音';
+      a.addEventListener('click',function(e){e.stopPropagation();});
+      c.appendChild(a);
+    });
+    /* 總覽 banner（總目錄描述列下方置中） */
+    var td=document.querySelector('.toc-desc');
+    if(td&&!document.getElementById('wyOverviewBtn')){
+      var w=document.createElement('div');w.className='wy-ov-wrap';
+      var b=document.createElement('a');b.id='wyOverviewBtn';b.className='toc-overview';
+      b.href='https://youtu.be/'+OV;b.target='_blank';b.rel='noopener';
+      b.innerHTML='<span class="pl">▶</span> 一–五品 經典補充解說（影音總覽）';
+      w.appendChild(b);td.parentNode.insertBefore(w,td.nextSibling);
+    }
+  }
+  var vbtn,vtx,vsecs;
+  function upd(){
+    if(!vbtn)return;
+    var idx=-1;
+    for(var i=0;i<vsecs.length;i++){if(vsecs[i].getBoundingClientRect().top<window.innerHeight*0.5)idx=i;}
+    if(idx<0||!VIDS[idx]){vbtn.classList.remove('show');return;}
+    vbtn.href='https://youtu.be/'+VIDS[idx];
+    vtx.textContent='本品影音 · '+NAMES[idx];
+    vbtn.classList.add('show');
+  }
+  function init(){
+    build();
+    vbtn=document.getElementById('wyVideo');vtx=document.getElementById('wyVideoTx');
+    vsecs=[].slice.call(document.querySelectorAll('section.chapter'));
+    window.addEventListener('scroll',upd,{passive:true});
+    window.addEventListener('resize',upd);
+    upd();
+  }
+  if(window.__wyReady&&window.__wyReady.then){window.__wyReady.then(function(){setTimeout(init,450);});}
+  else if(document.readyState!=='loading'){init();}
+  else{document.addEventListener('DOMContentLoaded',init);}
+})();
+</script></body></html>
